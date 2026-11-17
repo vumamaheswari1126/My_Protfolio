@@ -32,7 +32,7 @@ function Contact() {
                         </a>
 
                         <a
-    href="https://www.linkedin.com/in/uma-maheswari"
+    href="https://www.linkedin.com/in/uma-maheswariv"
     target="_blank"
     rel="noopener noreferrer"
     className="social-link"
