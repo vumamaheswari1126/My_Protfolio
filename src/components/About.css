@@ -1,0 +1,160 @@
+/* ABOUT SECTION */
+
+.about {
+    min-height: 90vh;
+    padding: 100px 8%;
+    background: linear-gradient(
+        120deg,
+        #171116 0%,
+        #21131B 55%,
+        #301421 100%
+    );
+
+    display: flex;
+    align-items: center;
+}
+
+/* MAIN CONTAINER */
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* LEFT CONTENT */
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    font-style: italic;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+.about-content h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    background: #C44569;
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+.about-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #FFFFFF;
+    margin-bottom: 22px;
+}
+
+.about-content h3 span {
+    color: #D87998;
+    font-style: italic;
+}
+
+.about-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    color: #D0C5C9;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+/* RIGHT SIDE CARDS */
+
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.about-card {
+    padding: 25px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #351724,
+        #481B30
+    );
+
+    border: 1px solid rgba(196, 69, 105, 0.3);
+    border-left: 4px solid #C44569;
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateX(8px);
+    border-color: #C44569;
+    box-shadow: 0 8px 25px rgba(196, 69, 105, 0.15);
+}
+
+.about-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    color: #F2A2BC;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.about-card span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #D0C5C9;
+    line-height: 1.7;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about {
+        padding: 80px 7%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .about-content h2 {
+        font-size: 34px;
+    }
+
+    .about-content h3 {
+        font-size: 21px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+    }
+
+    .about-card {
+        padding: 22px;
+    }
+
+}

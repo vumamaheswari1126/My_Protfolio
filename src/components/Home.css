@@ -1,0 +1,513 @@
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #171116;
+    color: #FFFFFF;
+}
+
+/* HOME SECTION */
+
+.home {
+    min-height: 90vh;
+    width: 100%;
+
+    background: linear-gradient(
+        120deg,
+        #171116 0%,
+        #29121C 50%,
+        #3B101F 100%
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 10%;
+    gap: 80px;
+}
+
+/* PROFILE IMAGE */
+
+.home-image {
+    width: 280px;
+    height: 280px;
+    min-width: 280px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 4px solid #A83258;
+
+    box-shadow:
+        0 0 20px rgba(168, 50, 88, 0.3),
+        0 0 45px rgba(88, 21, 46, 0.2);
+
+    animation: fadeLeft 1s ease forwards;
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 50%;
+}
+
+/* HOME CONTENT */
+
+.home-content {
+    max-width: 550px;
+    flex: 1;
+    text-align: left;
+
+    animation: fadeRight 1s ease forwards;
+}
+
+/* INTRO TEXT */
+
+.intro {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #D58BA0;
+    margin-bottom: 15px;
+}
+
+/* MAIN NAME */
+
+.home-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 600;
+    font-style: italic;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.home-content h1 span {
+    color: #C44569;
+    font: inherit;
+}
+
+/* DEVELOPER ROLE */
+
+.home-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(19px, 2.5vw, 26px);
+    font-weight: 500;
+    color: #D58BA0;
+    margin-bottom: 20px;
+}
+
+/* DESCRIPTION */
+
+.description {
+    font-size: 15px;
+    font-weight: 300;
+    color: #D0C5C9;
+    line-height: 1.9;
+    max-width: 520px;
+}
+
+/* BUTTONS */
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 13px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #8B1E3F;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #A83258;
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-4px);
+}
+
+/* SOCIAL LINKS */
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: #D0C5C9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #C44569;
+}
+
+/* ENTRANCE ANIMATIONS */
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 992px) {
+
+    .home {
+        gap: 40px;
+        padding: 50px 6%;
+    }
+
+    .home-image {
+        width: 230px;
+        height: 230px;
+        min-width: 230px;
+    }
+
+    .home-content {
+        left: -15px;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 9%;
+        gap: 35px;
+    }
+
+    .home-image {
+        width: 210px;
+        height: 210px;
+        min-width: 210px;
+    }
+
+    .home-content {
+        text-align: center;
+        left: 0;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content h2 {
+        font-size: 21px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .intro {
+        font-size: 12px;
+    }
+
+    .home-buttons {
+        justify-content: center;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-image,
+    .home-content {
+        animation: none;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        transition: none;
+    }
+}
+/* RESUME POPUP */
+
+.resume-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.resume-modal {
+    width: 90%;
+    max-width: 950px;
+    height: 90vh;
+
+    background: #24131D;
+    border: 1px solid #8B1E3F;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 22px;
+    background: #171116;
+    border-bottom: 1px solid #6B203C;
+}
+
+.resume-header h3 {
+    color: #F2A2BC;
+    font-family: 'Playfair Display', serif;
+}
+
+.resume-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.resume-download {
+    background: #8B1E3F;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.resume-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.resume-frame {
+    width: 100%;
+    flex: 1;
+    border: none;
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .resume-overlay {
+        padding: 8px;
+    }
+
+    .resume-modal {
+        width: 100%;
+        height: 90vh;
+    }
+
+    .resume-header {
+        padding: 12px;
+    }
+}
+/* RESUME POPUP */
+
+.resume-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.resume-modal {
+    width: 90%;
+    max-width: 950px;
+    height: 90vh;
+
+    background: #24131D;
+    border: 1px solid #8B1E3F;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 22px;
+    background: #171116;
+    border-bottom: 1px solid #6B203C;
+}
+
+.resume-header h3 {
+    color: #F2A2BC;
+    font-family: 'Playfair Display', serif;
+}
+
+.resume-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.resume-download {
+    background: #8B1E3F;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.resume-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.resume-frame {
+    width: 100%;
+    flex: 1;
+    border: none;
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .resume-overlay {
+        padding: 8px;
+    }
+
+    .resume-modal {
+        width: 100%;
+        height: 90vh;
+    }
+
+    .resume-header {
+        padding: 12px;
+    }
+}
+.btn-secondary {
+    background: #8B1E3F;
+    color: white;
+    border: 1px solid #8B1E3F;
+}
+
+.btn-secondary:hover {
+    background: #A83258;
+    border-color: #A83258;
+}
+/* MAKE BOTH HOME BUTTONS IDENTICAL */
+
+.home-buttons .btn-primary,
+.home-buttons .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 22px;
+    min-height: 57px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.home-buttons .btn-primary {
+    background: #8B1E3F;
+    color: white;
+    border: 1px solid #8B1E3F;
+}
+
+.home-buttons .btn-secondary {
+    background: #8B1E3F;
+    color: white;
+    border: 1px solid #8B1E3F;
+}
+
+.home-buttons .btn-primary:hover,
+.home-buttons .btn-secondary:hover {
+    background: #A83258;
+    border-color: #A83258;
+    transform: translateY(-4px);
+}
